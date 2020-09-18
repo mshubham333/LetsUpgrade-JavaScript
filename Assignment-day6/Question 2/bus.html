@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Person Crud</title>
+    <style>
+        * {
+          margin: 0px;
+          padding: 0px;
+        }
+  
+        .data {
+          height: 500px;
+          width: 80%;
+          background-color:gray;
+          margin-left: 10%;
+          margin-top: 50px;
+          padding: 20px;
+          display: inline-block;
+        }
+  
+        .table {
+          width: 100%;
+          margin-top: 20px;
+          border-color: green;
+          /* font-family: calibri; */
+        }
+        th,
+        td {
+          height: 40px;
+          text-align: center;
+          padding: 5px;
+        }
+        button {
+        /* padding: 10px; */
+     background-color: olive;
+     border-radius: 90%;
+     /* background-image: url("https://www.iconsdb.com/icons/preview/black/delete-xxl.png"); */
+     background-repeat: no-repeat;
+     background-size:contain;
+     margin-left: 30px;
+     height:40px;
+     width:120px;
+    
+
+      }
+      .form {
+        margin-top: 20px;
+      }
+      .input{
+        text-indent: 20px;
+          margin-left:10px;
+          height:30px;
+          width:360px;
+          background-repeat: no-repeat;
+          background-position: right;
+          background-size:contain;
+          background-image: url("https://www.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-512.png");
+      }
+      input{
+        text-indent: 20px;
+          margin-left:10px;
+         flex-direction: column;
+          height:30px;
+          width:120px;
+      }
+      .modal {
+        width: 80%;
+        height: 60vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        display: none;
+      }
+
+      .modalchild {
+        height: 100px;
+        width: 70%;
+        background-color: white;
+        margin-left: 15%;
+        margin-top: 50px;
+        display: inline-block;
+        padding: 30px;
+      }
+
+      </style>
+  
+</head>
+
+<body>
+    <div class="data">
+        <h1 style= color:olive>Buses</h1>
+        <div class="modal" onclick="hideModal(event)">
+            <div class="modalchild">
+        <div class="form">
+            <form onsubmit="addBus(event)">
+              <input type="text" required placeholder="Name" id="name" />
+              <input type="text" required placeholder="Source" id="source" />
+              <input type="text" required placeholder="Destination" id="destination" />
+              <input type="text" required placeholder="Number" id="number" />
+              <input type="number" required placeholder="Capacity" id="capacity" />
+              <button type="submit">Add</button>
+            </form>
+          </div>
+
+            </div>
+        </div>
+        <div class="form" >
+            <input
+            class= "input"
+              type="text"
+              placeholder="Search Source"
+              id="searchSource"
+              onkeyup="searchBySource()"
+            />
+            <input
+            class= "input"
+              type="text"
+              placeholder="Search Destination"
+              id="searchDestination"
+              onkeyup="searchByDestination()"
+            />
+              <button onclick='showModal()'>Add Bus</button>
+          </div>
+         
+        <table border="1" class="table" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Sr no</th>
+                <th>Name</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Number</th>
+                <th>Passenger Capacity</th>
+               
+              </tr>
+            </thead>
+            <tbody class="tdata" id="tdata"></tbody>
+          </table>
+
+    </div>
+    <script src="bus.js"></script>
+</body>
+</html>

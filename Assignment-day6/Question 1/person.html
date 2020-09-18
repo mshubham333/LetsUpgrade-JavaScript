@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Person Crud</title>
+    <style>
+        * {
+          margin: 0px;
+          padding: 0px;
+        }
+  
+        .data {
+          height: 500px;
+          width: 80%;
+          background-color: goldenrod;
+          margin-left: 10%;
+          margin-top: 50px;
+          padding: 20px;
+          display: inline-block;
+        }
+  
+        .table {
+          width: 100%;
+          margin-top: 20px;
+          border-color: green;
+          /* font-family: calibri; */
+        }
+        th,
+        td {
+          height: 40px;
+          text-align: center;
+          padding: 5px;
+        }
+        button {
+        padding: 10px;
+     background-color: olive;
+     border-radius: 90%;
+     background-image: url("https://www.iconsdb.com/icons/preview/black/delete-xxl.png");
+     background-repeat: no-repeat;
+     background-size:contain;
+    
+
+      }
+      .form {
+        margin-top: 20px;
+      }
+      input{
+        text-indent: 20px;
+          margin-left:10px;
+          height:30px;
+          width:360px;
+          background-repeat: no-repeat;
+          background-position: right;
+          background-size:contain;
+          background-image: url("https://www.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-512.png");
+      }
+
+      </style>
+  
+</head>
+
+<body>
+    <div class="data">
+        <h1 style= color:olive>Persons</h1>
+        <div class="form" >
+            <input
+              type="text"
+              placeholder="Search Person Name Here"
+              id="searchName"
+              onkeyup="searchByName()"
+            />
+         
+            <input
+            
+              type="text"
+              placeholder="Search City Name Here"
+              id="searchCity"
+              onkeyup="searchByCity()"
+            />
+          </div>
+        <table border="1" class="table" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Sr no</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Salary</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody class="tdata" id="tdata"></tbody>
+          </table>
+
+    </div>
+    <script src="person.js"></script>
+</body>
+</html>
