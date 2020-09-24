@@ -141,7 +141,7 @@ let products = [
             <img src="images/${image}" width="100%" />
           </div>
           <h3>${name}</h3>
-          <p>Price : ${price}$</p>
+          <p>Price : ${price}</p>
           <p>Size : ${size}</p>
           <p>Color : ${color}</p>
           <p>${description}</p>
@@ -183,23 +183,45 @@ let products = [
     let pro = getProductByID(products, id);
     let count= cart.length;
     //   putting in cart
+    const existing = cart.find(item => item.id === pro.id)
+    if(existing){ 
+    alert('Item already added to cart');
+    } else {
     cart.push(pro);
     count++;
+    document.getElementsByClassName('count')[0].innerHTML =
+count;
+    
+}
     displayProducts(cart, "cart");
-    
     console.log(count);
-   
+}
     
-  }
+  
   
   function removeFromCart(id) {
     // getting the index based on id
     let index = cart.findIndex(function (product) {
       return product.id == id;
     });
-  
+    let count= cart.length;
     //   removing from cart based on index
     cart.splice(index, 1);
+    count--;
+    document.getElementsByClassName('count')[0].innerHTML =
+count;
     displayProducts(cart, "cart");
   }
-
+  function filterProduct() {
+let filteredProducts=[];
+     let min = document.getElementById("minimumPrice").value;
+     let max = document.getElementById('maximumPrice').value;
+    //  console.log(min);
+    filteredProducts = products.filter(function(product) {
+            product.price >= min && product.price <= max
+            return product;
+    });
+   
+   displayProducts(filteredProducts);
+// console.log(filteredProducts);
+  }

@@ -83,6 +83,21 @@
       button {
         padding: 10px;
       }
+      .h2{
+        background-color: grey;
+          display :inline-block;
+          width:6%;
+          margin-left: 150px;
+      }
+      .count{
+          
+          /* margin-left: 40px; */
+          display:inline-block;
+          width:40%;
+          text-align: center;
+      
+
+      }
     </style>
   </head>
   <body>
@@ -96,17 +111,23 @@
         />
       </div>
     </div>
-
+    <div>
+<input type="search" placeholder="Min" id="minimumPrice" class="minimumPrice" >
+<input type="search" placeholder="Max" id="maximumPrice" class="maximumPrice" >
+<button onclick="filterProduct()">Filter</button>
     <div class="products">
       <div class="productwrapper" id="productwrapper"></div>
     </div>
 
     <div class="products" >
+    <div>
+        <h2 class="h2">Cart
+      <div class="count"></h2>
+    </div>
     
-      <h1>Cart</h1>
-    
+    </div>
       <div class="productwrapper" id="cart"></div>
- 
+     
     </div>
 
     <script src="shopping.js"></script>
